@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Especial ❤️</title>
+    <!-- Favicon de Coração -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Animações para corações e estrelas flutuantes */
+        @keyframes floatSlow {
+            0% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.8; }
+            50% { transform: translateY(-25px) rotate(12deg) scale(1.1); opacity: 0.5; }
+            100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.8; }
+        }
+        @keyframes pulseStar {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.3); opacity: 0.9; }
+        }
+        .floating-heart {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+        .pulsing-star {
+            animation: pulseStar 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-red-700 via-red-600 to-rose-700 min-h-screen text-slate-800 flex items-center justify-center p-4 relative overflow-x-hidden">
+
+    <!-- Fundo Romântico: Corações e Estrelas -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden select-none">
+        <div class="floating-heart absolute top-8 left-6 text-white/30 text-4xl" style="animation-delay: 0s;">❤️</div>
+        <div class="floating-heart absolute top-1/4 right-8 text-pink-200/40 text-3xl" style="animation-delay: 1s;">💖</div>
+        <div class="floating-heart absolute bottom-10 left-10 text-white/30 text-5xl" style="animation-delay: 2s;">💕</div>
+        <div class="floating-heart absolute bottom-1/3 right-12 text-pink-200/40 text-4xl" style="animation-delay: 1.5s;">💗</div>
+        
+        <!-- Estrelas Decorativas -->
+        <div class="pulsing-star absolute top-12 right-1/4 text-amber-200/80 text-xl" style="animation-delay: 0.5s;">✨</div>
+        <div class="pulsing-star absolute top-1/3 left-10 text-amber-100/70 text-2xl" style="animation-delay: 1.8s;">⭐</div>
+        <div class="pulsing-star absolute bottom-20 right-10 text-amber-200/80 text-xl" style="animation-delay: 1.2s;">✨</div>
+        <div class="pulsing-star absolute bottom-1/4 left-1/3 text-amber-100/70 text-lg" style="animation-delay: 2.3s;">⭐</div>
+    </div>
+
+    <!-- Container Principal do Card -->
+    <main class="w-full max-w-md bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-6 sm:p-8 relative z-10 border border-rose-200 transition-all duration-300">
+        
+        <!-- PÁGINA 1: CONVITE INICIAL -->
+        <section id="step-1" class="space-y-6 text-center">
+            <div class="inline-block p-4 bg-rose-100 rounded-full text-rose-500 text-3xl mb-1">
+                🍝✨
+            </div>
+            
+            <!-- Título "Oi Amanda!" em tom romântico -->
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-rose-600 tracking-tight">
+                Oi Amanda! ❤️
+            </h1>
+            
+            <p class="text-rose-500 font-semibold text-lg">
+                Você aceita o 2º date com o Elder?
+            </p>
+
+            <div class="bg-rose-50/80 p-4 rounded-2xl border border-rose-100 text-left space-y-2 text-rose-900 text-sm sm:text-base">
+                <p>
+                    A ideia é jantarmos uma deliciosa carbonara no <strong class="text-black">DOC Cucina</strong> 
+                    (<a href="https://www.instagram.com/doccucinapizzavino/" target="_blank" rel="noopener noreferrer" class="text-rose-600 hover:underline font-semibold">@doccucinapizzavinho</a>).
+                </p>
+                <p class="text-xs text-rose-400">
+                    Boa comida, bom vinho e uma excelente companhia garantidos! 😉
+                </p>
+            </div>
+
+            <p class="font-bold text-rose-600 pt-1">E aí, vamos sair? ✨</p>
+
+            <div class="grid grid-cols-2 gap-3 pt-2">
+                <button onclick="goToStep('step-2-yes')" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200">
+                    Sim! 💖
+                </button>
+                <button onclick="goToStep('step-2-no')" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3.5 px-4 rounded-2xl transition duration-200">
+                    Não 😅
+                </button>
+            </div>
+        </section>
+
+        <!-- PÁGINA DE RECUSA INICIAL -->
+        <section id="step-2-no" class="hidden space-y-6 text-center">
+            <div class="text-5xl mb-2">😅</div>
+            <h2 class="text-xl font-bold text-rose-600">
+                Respeito sua opinião...
+            </h2>
+            <div class="bg-amber-50 border border-amber-200 text-amber-800 p-4 rounded-2xl text-base font-medium">
+                ...mas é uma opinião burra! 🙈✨
+            </div>
+            <div class="space-y-3 pt-2">
+                <button onclick="goToStep('step-1')" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-rotate-left"></i> Mudar de ideia / Refazer
+                </button>
+                <button onclick="goToStep('step-final-no')" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3.5 px-4 rounded-2xl transition duration-200">
+                    Concluir ✅
+                </button>
+            </div>
+        </section>
+
+        <!-- PÁGINA FINAL DE RECUSA -->
+        <section id="step-final-no" class="hidden space-y-6 text-center">
+            <div class="text-6xl mb-2">👋</div>
+            <h2 class="text-2xl font-bold text-rose-600">Até mais!</h2>
+            <p class="text-slate-600 text-sm">Resposta enviada com sucesso. ✨</p>
+            <div class="pt-4">
+                <button onclick="resetApp()" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200">
+                    Recomeçar 🔄
+                </button>
+            </div>
+        </section>
+
+        <!-- PÁGINA 2 (SIM): DATA E HORÁRIO -->
+        <section id="step-2-yes" class="hidden space-y-5 text-center">
+            <div class="inline-block p-3 bg-rose-100 rounded-full text-rose-500 text-2xl">
+                📅⏰
+            </div>
+            <h2 class="text-xl font-bold text-rose-600">Escolha a data e o horário</h2>
+            <p class="text-xs text-rose-400">Selecione o momento perfeito!</p>
+
+            <form id="form-date-time" onsubmit="event.preventDefault(); goToStep('step-3-spicy');" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-semibold text-rose-700 mb-1">Data (06/11 a 15/11):</label>
+                    <input type="date" id="input-date" min="2026-11-06" max="2026-11-15" required class="w-full p-3 bg-rose-50/50 border border-rose-200 rounded-xl text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-rose-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-rose-700 mb-1">Horário:</label>
+                    <select id="select-time" required class="w-full p-3 bg-rose-50/50 border border-rose-200 rounded-xl text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-rose-500">
+                        <option value="" disabled selected>Selecione um horário...</option>
+                        <option value="19:30">19:30</option>
+                        <option value="20:00">20:00</option>
+                        <option value="20:30">20:30</option>
+                        <option value="21:00">21:00</option>
+                        <option value="21:30">21:30</option>
+                        <option value="22:00">22:00</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 pt-3">
+                    <button type="button" onclick="goToStep('step-1')" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3 px-4 rounded-2xl transition duration-200">
+                        Voltar
+                    </button>
+                    <button type="submit" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200">
+                        Próximo ➡️
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- PÁGINA 3: PERGUNTA PICANTE (MOTEL) -->
+        <section id="step-3-spicy" class="hidden space-y-6 text-center">
+            <div class="inline-block p-4 bg-rose-100 rounded-full text-rose-500 text-3xl mb-1">
+                🔥😈
+            </div>
+            <h2 class="text-xl font-bold text-rose-600">Uma pergunta rápida...</h2>
+            <p class="text-rose-900 font-medium text-base">
+                E se o clima esquentar depois do jantar... a gente vai para um motel? 🌶️
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 pt-2">
+                <button onclick="goToStep('step-motel-selection')" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200">
+                    Com certeza! 🔥
+                </button>
+                <button onclick="goToStep('step-motel-no')" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3.5 px-4 rounded-2xl transition duration-200">
+                    Melhor não 😇
+                </button>
+            </div>
+        </section>
+
+        <!-- OPÇÕES DE MOTÉIS -->
+        <section id="step-motel-selection" class="hidden space-y-5 text-center">
+            <div class="inline-block p-3 bg-rose-100 rounded-full text-rose-500 text-2xl">
+                🏨✨
+            </div>
+            <h2 class="text-xl font-bold text-rose-600">Escolha a opção favorita:</h2>
+
+            <div class="space-y-3 text-left">
+                <label class="flex items-center p-3.5 bg-rose-50/40 border border-rose-200 rounded-2xl cursor-pointer hover:bg-rose-100/50 transition">
+                    <input type="radio" name="motel" value="Dragon Motel (@dragon.motel)" checked class="w-4 h-4 text-rose-600 focus:ring-rose-500">
+                    <div class="ml-3">
+                        <div class="font-bold text-slate-800 text-sm">Dragon Motel</div>
+                        <a href="https://www.instagram.com/dragon.motel/" target="_blank" rel="noopener noreferrer" class="text-xs text-rose-600 hover:underline">@dragon.motel</a>
+                    </div>
+                </label>
+
+                <label class="flex items-center p-3.5 bg-rose-50/40 border border-rose-200 rounded-2xl cursor-pointer hover:bg-rose-100/50 transition">
+                    <input type="radio" name="motel" value="Perfume Motel (@perfumemotel)" class="w-4 h-4 text-rose-600 focus:ring-rose-500">
+                    <div class="ml-3">
+                        <div class="font-bold text-slate-800 text-sm">Perfume Motel</div>
+                        <a href="https://www.instagram.com/perfumemotel/" target="_blank" rel="noopener noreferrer" class="text-xs text-rose-600 hover:underline">@perfumemotel</a>
+                    </div>
+                </label>
+
+                <label class="flex items-center p-3.5 bg-rose-50/40 border border-rose-200 rounded-2xl cursor-pointer hover:bg-rose-100/50 transition">
+                    <input type="radio" name="motel" value="Lux Resort Motel (@luxresortmotel)" class="w-4 h-4 text-rose-600 focus:ring-rose-500">
+                    <div class="ml-3">
+                        <div class="font-bold text-slate-800 text-sm">Lux Resort Motel</div>
+                        <a href="https://www.instagram.com/luxresortmotel/" target="_blank" rel="noopener noreferrer" class="text-xs text-rose-600 hover:underline">@luxresortmotel</a>
+                    </div>
+                </label>
+            </div>
+
+            <div class="bg-rose-100/70 border border-rose-200 p-3 rounded-2xl text-xs text-rose-800 font-medium flex items-center justify-center gap-2">
+                <span>✨</span>
+                <span>Você só precisa escolher o motel e eu reservo o quarto, pode deixar comigo... 😉</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 pt-1">
+                <button onclick="goToStep('step-3-spicy')" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3 px-4 rounded-2xl transition duration-200">
+                    Voltar
+                </button>
+                <button onclick="setMotelChoice(true); goToStep('step-summary');" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200">
+                    Avançar ➡️
+                </button>
+            </div>
+        </section>
+
+        <!-- SE RESPONDEU NÃO NA PERGUNTA PICANTE -->
+        <section id="step-motel-no" class="hidden space-y-5 text-center">
+            <div class="text-5xl mb-2">😊🥂</div>
+            <h2 class="text-xl font-bold text-rose-600">Que pena... mas sem problemas!</h2>
+            <p class="text-slate-600 text-sm">
+                O importante é aproveitarmos a carbonara e as boas conversas! O resto fica para a próxima. 😉✨
+            </p>
+
+            <div class="space-y-2 pt-2">
+                <button onclick="goToStep('step-3-spicy')" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3 px-4 rounded-2xl transition duration-200 text-xs">
+                    Refazer esta seção 🔄
+                </button>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="goToStep('step-2-yes')" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3 px-4 rounded-2xl transition duration-200 text-sm">
+                        Voltar
+                    </button>
+                    <button onclick="setMotelChoice(false); goToStep('step-summary');" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200 text-sm">
+                        Próximo ➡️
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA FINAL DE RESUMO -->
+        <section id="step-summary" class="hidden space-y-5 text-center">
+            <div class="inline-block p-3 bg-rose-100 rounded-full text-rose-500 text-2xl">
+                📝✨
+            </div>
+            <h2 class="text-xl font-bold text-rose-600">Resumo do Nosso Date!</h2>
+
+            <div class="bg-rose-50/80 p-4 rounded-2xl border border-rose-100 text-left space-y-2 text-xs sm:text-sm text-slate-700">
+                <p>📍 <strong>Local:</strong> DOC Cucina (@doccucinapizzavino)</p>
+                <p>📅 <strong>Data:</strong> <span id="summary-date" class="font-semibold text-rose-600">--</span></p>
+                <p>⏰ <strong>Horário:</strong> <span id="summary-time" class="font-semibold text-rose-600">--</span></p>
+                <p>🔥 <strong>Esticadinha:</strong> <span id="summary-motel" class="font-semibold text-rose-600">--</span></p>
+            </div>
+
+            <p class="text-sm font-medium text-rose-900">
+                Tenho certeza que o date será incrível, recheado de boas conversas, gargalhadas e momentos especiais! 💖
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 pt-2">
+                <button onclick="goToStep('step-1')" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3 px-4 rounded-2xl transition duration-200 text-sm">
+                    Mudar de ideia 🔄
+                </button>
+                <button onclick="goToStep('step-final-success')" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200 text-sm">
+                    Concluir ✅
+                </button>
+            </div>
+        </section>
+
+        <!-- PÁGINA FINAL DE SUCESSO -->
+        <section id="step-final-success" class="hidden space-y-6 text-center">
+            <div class="text-6xl mb-2">💌</div>
+            <h2 class="text-2xl font-bold text-rose-600">Combinado!</h2>
+            <p class="text-slate-600 text-sm">Sua resposta foi salva! Mal posso esperar pelo nosso encontro. ✨</p>
+            <div class="pt-4">
+                <button onclick="resetApp()" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200">
+                    Recomeçar 🔄
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript Vanilla -->
+    <script>
+        let selectedMotel = "Não selecionado / Fica para a próxima";
+
+        function goToStep(stepId) {
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(sec => sec.classList.add('hidden'));
+
+            const target = document.getElementById(stepId);
+            if (target) {
+                target.classList.remove('hidden');
+            }
+
+            if (stepId === 'step-summary') {
+                updateSummary();
+            }
+        }
+
+        function setMotelChoice(hasChosenMotel) {
+            if (hasChosenMotel) {
+                const checkedOption = document.querySelector('input[name="motel"]:checked');
+                selectedMotel = checkedOption ? checkedOption.value : "Sim";
+            } else {
+                selectedMotel = "Fica para a próxima 😇";
+            }
+        }
+
+        function updateSummary() {
+            const rawDate = document.getElementById('input-date').value;
+            const time = document.getElementById('select-time').value;
+
+            let formattedDate = "--";
+            if (rawDate) {
+                const parts = rawDate.split('-');
+                if (parts.length === 3) {
+                    formattedDate = `${parts[2]}/${parts[1]}/${parts[0]}`;
+                }
+            }
+
+            document.getElementById('summary-date').textContent = formattedDate;
+            document.getElementById('summary-time').textContent = time || "--";
+            document.getElementById('summary-motel').textContent = selectedMotel;
+        }
+
+        function resetApp() {
+            document.getElementById('form-date-time').reset();
+            selectedMotel = "Não selecionado / Fica para a próxima";
+            goToStep('step-1');
+        }
+    </script>
+</body>
+</html>
