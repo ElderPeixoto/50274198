@@ -18,7 +18,6 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        /* Animações para corações e estrelas flutuantes */
         @keyframes floatSlow {
             0% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.8; }
             50% { transform: translateY(-25px) rotate(12deg) scale(1.1); opacity: 0.5; }
@@ -45,14 +44,13 @@
         <div class="floating-heart absolute bottom-10 left-10 text-white/30 text-5xl" style="animation-delay: 2s;">💕</div>
         <div class="floating-heart absolute bottom-1/3 right-12 text-pink-200/40 text-4xl" style="animation-delay: 1.5s;">💗</div>
         
-        <!-- Estrelas Decorativas -->
         <div class="pulsing-star absolute top-12 right-1/4 text-amber-200/80 text-xl" style="animation-delay: 0.5s;">✨</div>
         <div class="pulsing-star absolute top-1/3 left-10 text-amber-100/70 text-2xl" style="animation-delay: 1.8s;">⭐</div>
         <div class="pulsing-star absolute bottom-20 right-10 text-amber-200/80 text-xl" style="animation-delay: 1.2s;">✨</div>
         <div class="pulsing-star absolute bottom-1/4 left-1/3 text-amber-100/70 text-lg" style="animation-delay: 2.3s;">⭐</div>
     </div>
 
-    <!-- Container Principal do Card -->
+    <!-- Container Principal -->
     <main class="w-full max-w-md bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-6 sm:p-8 relative z-10 border border-rose-200 transition-all duration-300">
         
         <!-- PÁGINA 1: CONVITE INICIAL -->
@@ -61,7 +59,6 @@
                 🍝✨
             </div>
             
-            <!-- Título "Oi Amanda!" em tom romântico -->
             <h1 class="text-3xl sm:text-4xl font-extrabold text-rose-600 tracking-tight">
                 Oi Amanda! ❤️
             </h1>
@@ -73,7 +70,7 @@
             <div class="bg-rose-50/80 p-4 rounded-2xl border border-rose-100 text-left space-y-2 text-rose-900 text-sm sm:text-base">
                 <p>
                     A ideia é jantarmos uma deliciosa carbonara no <strong class="text-black">DOC Cucina</strong> 
-                    (<a href="https://www.instagram.com/doccucinapizzavino/" target="_blank" rel="noopener noreferrer" class="text-rose-600 hover:underline font-semibold">@doccucinapizzavinho</a>).
+                    (<a href="https://www.instagram.com/doccucinapizzavinho/" target="_blank" rel="noopener noreferrer" class="text-rose-600 hover:underline font-semibold">@doccucinapizzavinho</a>).
                 </p>
                 <p class="text-xs text-rose-400">
                     Boa comida, bom vinho e uma excelente companhia garantidos! 😉
@@ -105,8 +102,8 @@
                 <button onclick="goToStep('step-1')" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-rotate-left"></i> Mudar de ideia / Refazer
                 </button>
-                <button onclick="goToStep('step-final-no')" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3.5 px-4 rounded-2xl transition duration-200">
-                    Concluir ✅
+                <button onclick="submitNo()" id="btn-submit-no" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3.5 px-4 rounded-2xl transition duration-200 flex items-center justify-center gap-2">
+                    <span>Concluir ✅</span>
                 </button>
             </div>
         </section>
@@ -234,7 +231,7 @@
             <div class="text-5xl mb-2">😊🥂</div>
             <h2 class="text-xl font-bold text-rose-600">Que pena... mas sem problemas!</h2>
             <p class="text-slate-600 text-sm">
-                O importante é aproveitarmos a carbonara e as boas conversas! O resto fica para a próxima. 😉✨
+                O importante é aproveitarmos a janta, a carbonara e as boas conversas! O resto fica para a próxima. 😉✨
             </p>
 
             <div class="space-y-2 pt-2">
@@ -260,7 +257,7 @@
             <h2 class="text-xl font-bold text-rose-600">Resumo do Nosso Date!</h2>
 
             <div class="bg-rose-50/80 p-4 rounded-2xl border border-rose-100 text-left space-y-2 text-xs sm:text-sm text-slate-700">
-                <p>📍 <strong>Local:</strong> DOC Cucina (@doccucinapizzavino)</p>
+                <p>📍 <strong>Local:</strong> DOC Cucina (@doccucinapizzavinho)</p>
                 <p>📅 <strong>Data:</strong> <span id="summary-date" class="font-semibold text-rose-600">--</span></p>
                 <p>⏰ <strong>Horário:</strong> <span id="summary-time" class="font-semibold text-rose-600">--</span></p>
                 <p>🔥 <strong>Esticadinha:</strong> <span id="summary-motel" class="font-semibold text-rose-600">--</span></p>
@@ -274,8 +271,8 @@
                 <button onclick="goToStep('step-1')" class="w-full bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-600 font-semibold py-3 px-4 rounded-2xl transition duration-200 text-sm">
                     Mudar de ideia 🔄
                 </button>
-                <button onclick="goToStep('step-final-success')" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200 text-sm">
-                    Concluir ✅
+                <button onclick="submitYes()" id="btn-submit-yes" class="w-full bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold py-3 px-4 rounded-2xl shadow-lg shadow-rose-600/30 transition duration-200 text-sm flex items-center justify-center gap-2">
+                    <span>Concluir ✅</span>
                 </button>
             </div>
         </section>
@@ -294,9 +291,30 @@
 
     </main>
 
-    <!-- JavaScript Vanilla -->
+    <!-- JavaScript Vanilla com Integração SheetDB -->
     <script>
+        const SHEETDB_API_URL = "https://sheetdb.io/api/v1/41o43sy77g2lo";
         let selectedMotel = "Não selecionado / Fica para a próxima";
+
+        function getFormattedDateTime() {
+            const now = new Date();
+            return now.toLocaleString('pt-BR');
+        }
+
+        async function sendToSheetDB(payload) {
+            try {
+                await fetch(SHEETDB_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ data: [payload] })
+                });
+            } catch (error) {
+                console.error("Erro ao enviar para o SheetDB:", error);
+            }
+        }
 
         function goToStep(stepId) {
             const sections = document.querySelectorAll('main > section');
@@ -336,6 +354,53 @@
             document.getElementById('summary-date').textContent = formattedDate;
             document.getElementById('summary-time').textContent = time || "--";
             document.getElementById('summary-motel').textContent = selectedMotel;
+        }
+
+        async function submitNo() {
+            const btn = document.getElementById('btn-submit-no');
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Enviando...`;
+
+            await sendToSheetDB({
+                DataHora: getFormattedDateTime(),
+                Resposta: "Date Recusado",
+                DataHorarioDate: "N/A",
+                Motel: "N/A"
+            });
+
+            btn.disabled = false;
+            btn.innerHTML = `<span>Concluir ✅</span>`;
+            goToStep('step-final-no');
+        }
+
+        async function submitYes() {
+            const btn = document.getElementById('btn-submit-yes');
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Enviando...`;
+
+            const rawDate = document.getElementById('input-date').value;
+            const time = document.getElementById('select-time').value;
+
+            let formattedDate = rawDate;
+            if (rawDate) {
+                const parts = rawDate.split('-');
+                if (parts.length === 3) {
+                    formattedDate = `${parts[2]}/${parts[1]}/${parts[0]}`;
+                }
+            }
+
+            const dateTimeChoice = `${formattedDate} às ${time}`;
+
+            await sendToSheetDB({
+                DataHora: getFormattedDateTime(),
+                Resposta: "Date Aceito",
+                DataHorarioDate: dateTimeChoice,
+                Motel: selectedMotel
+            });
+
+            btn.disabled = false;
+            btn.innerHTML = `<span>Concluir ✅</span>`;
+            goToStep('step-final-success');
         }
 
         function resetApp() {
